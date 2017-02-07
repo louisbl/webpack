@@ -19,18 +19,15 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js'],
     modules: [
-      resolve('src'),
       resolve('node_modules')
     ],
     alias: {
       {{#if_eq build "standalone"}}
       'vue$': 'vue/dist/vue.common.js',
       {{/if_eq}}
-      'src': resolve('src'),
       'assets': resolve('src/assets'),
-      'components': resolve('src/components')
     }
   },
   module: {
