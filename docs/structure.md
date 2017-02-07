@@ -16,10 +16,8 @@
 │       └── ...
 ├── static/                     # pure static assets (directly copied)
 ├── test/
-│   └── unit/                   # unit tests
-│   │   ├── specs/              # test spec files
-│   │   ├── index.js            # test build entry file
-│   │   └── karma.conf.js       # test runner config file
+│   └── jest/                   # jest specific files
+│   │   ├── specs/              # beautify snapshot
 │   └── e2e/                    # e2e tests
 │   │   ├── specs/              # test spec files
 │   │   ├── custom-assertions/  # custom assertions for e2e tests
@@ -50,9 +48,9 @@ This directory is an escape hatch for static assets that you do not want to proc
 
 See [Handling Static Assets](static.md) for more details.
 
-### `test/unit`
+### `test/jest`
 
-Contains unit test related files. See [Unit Testing](unit.md) for more details.
+Contains jest related files. See [Unit Testing](unit.md) for more details.
 
 ### `test/e2e`
 

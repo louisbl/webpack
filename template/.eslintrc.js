@@ -7,7 +7,8 @@ module.exports = {
     sourceType: 'module'
   },
   env: {
-    browser: true,
+    browser: true{{#unit}},
+    jest: true,{{/unit}}
   },
   {{#if_eq lintConfig "standard"}}
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
@@ -38,17 +39,21 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     {{/if_eq}}
+    {{#unit}}
     {{#if_eq lintConfig "airbnb"}}
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'
     }],
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      'optionalDependencies': ['test/unit/index.js']
-    }],
+    // allow devDependencies
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": ["**/*.test.js", "**/*.spec.js"]
+      }
+    ],
     {{/if_eq}}
+    {{/unit}}
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

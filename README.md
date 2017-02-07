@@ -1,4 +1,4 @@
-# vue-webpack-boilerplate
+# vue-webpack-boilerplate-jest
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 
@@ -37,9 +37,9 @@ $ npm run dev
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
   - Use `npm run build --report`to build with bundle size analytics.
 
-- `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
+- `npm run unit`: Unit tests with [Jest](https://facebook.github.io/jest/).
   - Supports ES2015 in test files.
-  - Supports all webpack loaders.
+  - Supports snapshot testing with `vue-server-renderer`.
   - Easy mock injection.
 
 - `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
